@@ -28,12 +28,6 @@ while($count <= 10) {
     $count += 1;
 } */
 
-$start = 1;
-while($start <= 30) {
-    if($start % 2 == 0) {
-        echo $start."<br>";
-    }
-    $start++;
-}
+
 ?>
 <!-- WAP to print all the multiples of 4 that ranges from 1 to 100 -->
