@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    border: solid;
+    padding: 30px;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+td, th {
+    border-bottom: 1px solid black;
+    padding: 10px 35px;
+}
+
+button {
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+
+#update {
+    background-color: yellow;
+}
+
+#delete {
+    background-color: red;
+    color: white;
+}
+
+input[type=submit] {
+    background-color: dodgerblue;
+    padding: 10px;
+}
