@@ -1,5 +1,9 @@
 <?php
-include 'connection.php'
+session_start();
+include 'connection.php';
+if(!isset($_SESSION['name'])) {
+    header("location:login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +19,7 @@ include 'connection.php'
 <body>
     <h1>Dashboard - All the details you need are here</h1>
     <a href="insert.php"><button>+ Add New</button></a>
+    <a href="logout.php"><button style="background-color: rgba(255, 0, 0, 0.8); color: white">Logout</button></a>
     <table border="1" style="margin-top: 20px;">
         <tr>
             <th>ID</th>
