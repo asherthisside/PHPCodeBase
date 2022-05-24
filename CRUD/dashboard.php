@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'connection.php';
-if(!isset($_SESSION['name'])) {
+if (!isset($_SESSION['name'])) {
     header("location:login.php");
 }
 ?>
@@ -13,6 +13,7 @@ if(!isset($_SESSION['name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Data Display</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,7 +30,7 @@ if(!isset($_SESSION['name'])) {
         </tr>
 
         <?php
-        $select_query = "SELECT * FROM `second`";
+        $select_query = "SELECT * FROM `second` LIMIT 5";
         $select = mysqli_query($conn, $select_query);
         if (!$select) {
             echo "Data wasn't selected " . mysqli_error($conn);
@@ -50,6 +51,16 @@ if(!isset($_SESSION['name'])) {
         }
         ?>
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
