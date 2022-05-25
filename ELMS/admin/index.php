@@ -53,7 +53,8 @@ if(isset($_POST['sub'])) {
     }
     else {
         session_start();
-        $_SESSION['name'] = $useremail;
+        $data = mysqli_fetch_assoc($select);
+        $_SESSION['name'] = $data['name'];
         header("location:admin-dashboard.php");
     }
 }
