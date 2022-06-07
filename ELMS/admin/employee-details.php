@@ -46,8 +46,8 @@ else {
             <td><?php echo $data['email']?></td>
             <td><?php echo $data['address']?></td>
             <td>
-                <a href=""><button>update</button></a>    
-                <a href=""><button>Delete</button></a>    
+                <a href="update-employee.php?id=<?php echo $data['id']?>"><button>update</button></a>    
+                <a href="delete-employee.php?id=<?php echo $data['id']?>"><button>Delete</button></a>    
             </td>
         </tr>
         <?php

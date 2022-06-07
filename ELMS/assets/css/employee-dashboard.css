@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 1em;
+    width: 80%;
+    min-height: 150vh;
+    margin: 1em auto;
+    border: solid rgb(0, 0, 107);
+}
+
+.container .top-section {
+    height: 260px;
+}
+
+.container .emp_pic {
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin-right: 3em;
+}
+
+.container .emp_name {
+    font-size: 3.5em;
+    position: relative;
+    top: 50px;
+    
+}
+
+.container .emp_id {
+    font-size: 2.5em;
+    position: relative;
+    top: 50px;
+    
+}
+
+.container .emp_designation {
+    font-size: 3em;
+    position: relative;
+    top: 50px;
+
+}
+
+.department, .qualification, .phone, .email {
+    margin: 2em auto;
+    font-size: 1.25em;
+    width: 50%;
+    /* border: solid; */
+    float: left;
+}
+
+.department span, .qualification span, .phone span, .email span, .address span {
+    font-size: 2em;
+}
+
+h2 {
+    margin-top: 2em;
+    text-align: center;
+    text-decoration: underline;
+}

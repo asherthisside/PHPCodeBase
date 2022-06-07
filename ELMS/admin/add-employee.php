@@ -87,13 +87,21 @@ if (isset($_POST['sub'])) {
     $firstname = $_POST['form_first_name'];
     $lastname = $_POST['form_last_name'];
     $emp_id = $_POST['form_emp_id'];
-    $department = $_POST['form_department'];
-    $designation = $_POST['form_designation'];
-    $qualification = $_POST['form_qualification'];
-    $phone = $_POST['form_phone'];
-    $email = $_POST['form_email'];
-    $address = $_POST['form_address'];
 
-    echo $firstname, $lastname, $emp_id, $department, $designation, $qualification, $phone, $email, $address;
+    // echo $firstname, $lastname, $emp_id, $department, $designation, $qualification, $phone, $email, $address;
+    $insert_query = "INSERT INTO `employees`(`firstname`, `lastname`, `emp_id`) VALUES ('$firstname','$lastname','$emp_id')";
+
+    $insert = mysqli_query($conn, $insert_query);
+    if($insert) {
+        ?>
+        <script>
+            alert("Employee Added. Please ask them to sign Up to complete registration.")
+            location.href = "admin-dashboard.php"
+        </script>
+        <?php
+    }
+    else {
+        die("Employee can't be added at the moment".mysqli_error($conn));
+    }
 }
 ?>

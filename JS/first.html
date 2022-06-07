@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JS</title>
+    <script src="" defer></script>
+</head>
+<body>
+    <h1 id="head"></h1>
+    <script>
+        // console.log("Hello World")
+        // alert("Hello World")
+        document.getElementById("head").innerHTML = "Hello World"
+
+        // 3 Ways 
+        /*1. Using Var keyword 
+        2. Using let keyword 
+        3. Directly */
+
+        var abc = 234;
+        abc = "Haaris"
+        // console.log(abc)
+
+        let name = 45;
+        name = "Akash"
+        // console.log(name)
+
+        var city = "Delhi"
+        // console.log(city);
+        {
+            city = "Noida"
+            // console.log(city);
+        }
+        // console.log(city);
+
+
+        let food = "Rice"
+        // console.log(food);
+        {
+            let food = "Roti"
+            // console.log(food);
+        }
+        // console.log(food);
+
+        akash = 67;
+        // console.log(akash);
+
+
+        // const keyword 
+        const fixed = "I am a human"
+        // fixed = "You are an alien"
+        // console.log(fixed);
+
+        // Operators -> Arithmetic, comparision operators, logical operators, Assignment operators (=, +=, -=, *=, /=), 
+
+
+        // Control structure - Control the flow of our program 
+        /* 
+        1. Sequential
+        2. Conditional
+        3. Iterative
+        */
+        // let num = 13
+        // if(num > 20) {
+        //     console.log("Yes, condition true");
+        // }
+        // else {
+        //     console.log("No, condition false");
+        // }
+
+        // if(num == 13 && num > 20) {
+        //     console.log("Both the conditions are true");
+        // }
+        // else {
+        //     console.log("Both the conditions are not true");
+        // }
+
+        let a = 1 
+        // while(a <= 10) {
+        //     console.log(a);
+        //     a++;
+        // }
+
+        // do {
+        //     // statements
+        // }while(condition)
+
+        // a = 34;
+        // do {
+        //     console.log(a);
+        //     a++;
+        // }while(a <= 1)
+
+        // console.log(a);
+
+        // for(let i = 0; i <= 11; i++) {
+        //     console.log(i * i);
+        //     if (i == 5) {
+        //         break
+        //     }
+        //     else {
+        //         continue
+        //     }
+        // }
+
+        let i = 1
+        for(i; i < 4; i++) {
+            for(let j = 1; j < 4; j++) {
+                break
+            }
+        }
+        console.log(i);
+    </script>
+</body>
+</html>
