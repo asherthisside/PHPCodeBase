@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Objects</title>
+</head>
+
+<body>
+<h1 id="head" title="This is a heading">Introduction</h1>
+<hr>
+<p class="para lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam quia, expedita quisquam eum sed in rem eveniet cumque eos enim cupiditate quod, vitae atque consectetur recusandae, odit omnis quasi numquam minima autem nesciunt totam voluptas. Voluptates atque voluptatibus, reiciendis pariatur quidem et esse eaque consectetur velit, sit at perferendis excepturi enim deserunt quos laborum natus culpa amet, in maiores molestias nesciunt! Natus, reprehenderit neque. Voluptas, consequatur pariatur. Ullam, provident ducimus veritatis inventore est sed excepturi, minima eveniet nisi minus temporibus! Voluptatem repellat rem beatae corporis et assumenda ipsum, deserunt officia soluta non nulla hic, consequatur libero, facilis nam error alias?</p>
+<p class="para lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam quia, expedita quisquam eum sed in rem eveniet cumque eos enim cupiditate quod, vitae atque consectetur recusandae, odit omnis quasi numquam minima autem nesciunt totam voluptas. Voluptates atque voluptatibus, reiciendis pariatur quidem et esse eaque consectetur velit, sit at perferendis excepturi enim deserunt quos laborum natus culpa amet, in maiores molestias nesciunt! Natus, reprehenderit neque. Voluptas, consequatur pariatur. Ullam, provident ducimus veritatis inventore est sed excepturi, minima eveniet nisi minus temporibus! Voluptatem repellat rem beatae corporis et assumenda ipsum, deserunt officia soluta non nulla hic, consequatur libero, facilis nam error alias?</p>
+    <script>
+        let abc = 34
+        var cars = [1, 2, 3, 4, 5, 'Honda', 'WR-v', 34.2, true]
+
+        var cars = [2]
+
+        // console.log(cars, typeof cars);
+
+        console.log(cars);
+        console.log(cars[3]);
+        console.log(cars[6]);
+
+        // for (let i = 0; i < cars.length; i++) {
+        //     console.log(cars[i]);
+        // }
+
+        // Array methods
+        // pop() Method - Used to remove element from the last index
+        // cars.pop()
+        // console.log(cars.pop())
+        // push() method - Used to add element at the last index
+        cars.push('Lambo')
+
+        // shift() method - Used to remove element from the first index
+        cars.shift()
+
+        // Unshift() method - Used to add element at the first index
+        cars.unshift('Mercedes')
+
+        // foreach() method - Used to traverse through all the elements of the array.
+        function myFn(item, index, array) {
+            console.log(item, index, array);
+        }
+
+        // cars.forEach(myFn)
+
+        // for (let i = 0; i < cars.length; i++) {
+        //     console.log(cars[i]);
+        // }
+
+
+        // Creating Array with new keyword 
+
+        const arr = new Array(10, 20, 30, 40, 50)
+
+        const arr2 = new Array(12)
+        // console.log(arr);
+
+
+        // Objects
+        var student = {
+            name: 'Haaris Saifi',
+            standard: 12, school: 'SOPS',
+            games: function () {
+                console.log("Yes, I like games very much");
+            },
+            subjects : ['Maths', 'Science', 'Social studies']
+        }
+
+        // console.log(student.subjects[1])
+        // student.games()
+
+        // For in loop - Used to traverse through the elements in an object
+
+        // for(item in student) {
+        //     console.log(student[item]);
+        // }
+
+
+        // JS is an object - based language 
+
+        // Document object 
+
+        var d = document
+        console.log(d);
+    
+        // DOM Manipulation - Document Object Model 
+
+
+        // SELECTOR METHODS - We have 2 types of selector methods
+        // 1. Single selectors - let you select one node at once. getElementById() and querySelector()
+        // 2. Multiple selectors - Let you select multiple nodes at once. getElementByClassName(), getElementByTagName(), getElementByName(), querySelectorAll()
+
+        var heading = document.getElementById("head")
+        heading.classList.add("new-heading")
+        heading.title = "We use JS to track you"
+
+        heading.innerHTML = "<em>Changed with JS</em>"
+        console.log(heading.title);
+    </script>
+</body>
+
+</html>

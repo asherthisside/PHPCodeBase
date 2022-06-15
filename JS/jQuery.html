@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery CC</title>
+</head>
+
+<body>
+    <h1>My Introduction</h1>
+    <hr>
+    <button>Click here</button>
+    <input type="text" id="i1">
+    <p class="para pgraph" id="p1">1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dolorem
+        minima libero est quo odio unde ad, inventore, non aperiam ipsum quaerat quod ea. Animi deleniti quam assumenda
+        reprehenderit voluptates, maxime rem debitis labore odit. Voluptas qui at, reprehenderit commodi mollitia nam
+        optio recusandae cum porro voluptatum perspiciatis asperiores nulla officia ex repellat libero delectus
+        voluptatem velit eum! Quae ad perferendis ratione assumenda sed aliquid eum enim odio fugiat accusantium
+        necessitatibus laborum nihil cumque ipsam voluptatibus, sint quos est corporis excepturi debitis eius esse
+        eaque. Sunt doloremque dignissimos eligendi nihil laudantium accusantium voluptates, quod quae in delectus
+        praesentium numquam? Id?</p>
+    <p class="para pgraph" id="p2">2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dolorem
+        minima libero est quo odio unde ad, inventore, non aperiam ipsum quaerat quod ea. Animi deleniti quam assumenda
+        reprehenderit voluptates, maxime rem debitis labore odit. Voluptas qui at, reprehenderit commodi mollitia nam
+        optio recusandae cum porro voluptatum perspiciatis asperiores nulla officia ex repellat libero delectus
+        voluptatem velit eum! Quae ad perferendis ratione assumenda sed aliquid eum enim odio fugiat accusantium
+        necessitatibus laborum nihil cumque ipsam voluptatibus, sint quos est corporis excepturi debitis eius esse
+        eaque. Sunt doloremque dignissimos eligendi nihil laudantium accusantium voluptates, quod quae in delectus
+        praesentium numquam? Id?</p>
+    <p class="para pgraph" id="p3">3 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dolorem
+        minima libero est quo odio unde ad, inventore, non aperiam ipsum quaerat quod ea. Animi deleniti quam assumenda
+        reprehenderit voluptates, maxime rem debitis labore odit. Voluptas qui at, reprehenderit commodi mollitia nam
+        optio recusandae cum porro voluptatum perspiciatis asperiores nulla officia ex repellat libero delectus
+        voluptatem velit eum! Quae ad perferendis ratione assumenda sed aliquid eum enim odio fugiat accusantium
+        necessitatibus laborum nihil cumque ipsam voluptatibus, sint quos est corporis excepturi debitis eius esse
+        eaque. Sunt doloremque dignissimos eligendi nihil laudantium accusantium voluptates, quod quae in delectus
+        praesentium numquam? Id?</p>
+    <p class="para pgraph" id="p4">4 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dolorem
+        minima libero est quo odio unde ad, inventore, non aperiam ipsum quaerat quod ea. Animi deleniti quam assumenda
+        reprehenderit voluptates, maxime rem debitis labore odit. Voluptas qui at, reprehenderit commodi mollitia nam
+        optio recusandae cum porro voluptatum perspiciatis asperiores nulla officia ex repellat libero delectus
+        voluptatem velit eum! Quae ad perferendis ratione assumenda sed aliquid eum enim odio fugiat accusantium
+        necessitatibus laborum nihil cumque ipsam voluptatibus, sint quos est corporis excepturi debitis eius esse
+        eaque. Sunt doloremque dignissimos eligendi nihil laudantium accusantium voluptates, quod quae in delectus
+        praesentium numquam? Id?</p>
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        // console.log($)
+        function abc() {
+            alert("Function ABC was called")
+        }
+        // $("#p3").hide(1000, abc)
+        // $("#p3").hide(3000, function() {
+        //     let reloadPage = confirm("Do you wanna do it again")
+        //     if (reloadPage) {
+        //         location.reload()
+        //     }
+        // })
+
+        // function hidePara() {
+        //     $(this).hide()
+        // }
+
+
+
+        $(document).ready(
+            // $("p").click(function () {
+            //     $(this).fadeOut(1000)
+            // })
+            $("button").click(function() {
+                // $("p").slideToggle(500)
+                // console.log($("#p4").html())
+                // $("#p4").text("<b>The value has now been changed with jQuery</b>")
+                // console.log($("#i1").val())
+                // $("#i1").val("Value filled")
+                $("#p1").append("This text is now appended")
+            })
+        )
+    </script>
+</body>
+
+</html>

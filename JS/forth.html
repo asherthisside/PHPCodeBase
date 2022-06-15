@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <ul>
+        <li>abc</li>
+        <li>def</li>
+        <li>ghi</li>
+        <li>jkl</li>
+        <li>mno</li>
+    </ul>
+
+    <img src="../../adventure/images/2.png" alt="">
+
+    <script>
+        // Add new HTML content or update the existing one
+        // Add new attributes or update the existing ones.
+        // Add new CSS or update the current one.
+
+        // Creating a HTML element: 
+        list_item = document.createElement("li")
+        list_item.id = "li6"
+        list_item.className = "class-one"
+        list_item.innerHTML = "<em>pqr</em>"
+        console.log(list_item);
+
+        list = document.querySelector("ul")
+        console.log(list);
+
+        list.appendChild(list_item)
+
+        to_be_removed = document.getElementsByTagName("li")
+        console.log(to_be_removed);
+
+        list.removeChild(to_be_removed[2])
+
+        // HomeWork - Try out the method - document.replaceChild()
+        image = document.querySelector("img")
+        image.src = "../ELMS/assets/images/emp_logo.png"
+        console.log(image.src)
+
+        image.addEventListener("click", () => {
+            image.src = "C:/Users/Admin/Desktop/930/images/water.jpg"
+            // alert("Working ... ")
+            // console.log(image.src);
+        })
+
+        list.style.backgroundColor = "red"
+        list.style.color = "white"
+        list.style.fontSize = "1.5em"
+
+
+        // Events ->  
+        function change() {
+            image = document.querySelector("img")
+            image.src = "../ELMS/assets/images/emp_logo.png"
+        }
+
+        // Anonymous function 
+
+        var abc = function () {
+            alert("This is an anonymous function")
+        }
+
+        // abc()
+
+        // Arrow function
+
+        var def = (a, b) => {
+            console.log(a, b);
+        }
+
+        def("Haaris", "Saifi")
+</script>
+</body>
+</html>
