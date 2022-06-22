@@ -19,24 +19,25 @@
                 <?php
                 session_start();
                 echo $_SESSION['name'];
+                $firstname = substr($_SESSION['name'], 0, strpos($_SESSION['name'], " "));
+                // echo $firtname;
                 ?>
+
+
             </span></div>
         <nav>
             <ul>
                 <li>
-                    <a href=""><i class="fa-solid fa-file-pen"></i> <br> Update Info</a>
+                    <a href="update-details.php"><i class="fa-solid fa-file-pen"></i> <br> Update Info</a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="apply-leave.php?name=<?php echo $firstname?>">
                         <i class="fa-solid fa-folder-plus"></i> <br> Apply Leave</a>
                 </li>
                 <li>
                     <a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> <br> Logout</a>
                 </li>
             </ul>
-
-
-
         </nav>
     </header>
 </body>

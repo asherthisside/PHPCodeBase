@@ -38,7 +38,7 @@ echo "Hello, ".$_SESSION['name'].".";
             <a href="update-requests.php"><button>Update Requests</button></a>
         </div>
         <div class="btn">
-            <a href="update-requests.php"><button>Leaves History</button></a>
+            <a href="leaves.php"><button>Leaves History</button></a>
         </div>
     </div>
 </body>

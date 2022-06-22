@@ -57,6 +57,7 @@ if(isset($_POST['sub'])) {
     else {
         session_start();
         $data = mysqli_fetch_assoc($select);
+        $_SESSION['id'] = $data['id'];
         $_SESSION['name'] = $data['firstname']. " ".$data['lastname'] ;
         header("location:dashboard.php");
     }

@@ -98,21 +98,6 @@ if (isset($_POST['sub'])) {
 
     $signup = mysqli_query($conn, $signup_query);
 
-    $check_update_query = "SELECT * FROM `employeees` WHERE `emp_id` = $emp_id";
-
-    $check_update = mysqli_query($conn, $check_update_query);
-
-    $data = mysqli_fetch_assoc($check_update);
-    if ($data['department'] != 'NULL' && $data['address'] != 'NULL' && $data['phone'] != 'NULL')  {
-        ?>
-    //     <script>
-            alert("You have been registered successfully.")
-            location.href = "index.php"
-    //     </script>
-    //     <?php
-    }
-    else {
-        die("Ooops! An error Occured ".mysqli_error($conn));
-    }
+    move_uploaded_file($image['tmp_name'], 'upload/'.$imagename);
 }
 ?>
