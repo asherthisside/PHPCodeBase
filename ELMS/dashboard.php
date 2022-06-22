@@ -40,6 +40,30 @@ $data = mysqli_fetch_assoc($select_data)
         <div class="phone"><span>Phone: </span><?php echo $data['phone']?></div>
         <div class="email"><span>Email: </span><?php echo $data['email']?></div>
         <div class="address"><span>Address: </span><?php echo $data['address']?></div>
+        <div class="leave-table">
+            <table>
+                <tr>
+                    <th>Leave Type</th>
+                    <th>No. of Leaves</th>
+                    <th>Starting Date</th>
+                    <th>Status</th>
+                </tr>
+                <?php
+                $leave_record_query = "SELECT * FROM `leaves` WHERE `e_id` = $id";
+                $leave_record = mysqli_query($conn, $leave_record_query);
+                while($data2 = mysqli_fetch_assoc($leave_record)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $data2['leave_type']?></td>
+                        <td><?php echo $data2['leave_num']?></td>
+                        <td><?php echo $data2['start_date']?></td>
+                        <td><?php echo $data2['status']?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </table>
+        </div>
     </div>
 </body>
 

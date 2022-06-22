@@ -18,19 +18,24 @@
         </tr>
         <?php
         include '../connection.php';
-        $select_leaves_query = "SELECT * FROM `leaves` WHERE `status` IS NULL ORDER BY `start_date`";
+        $select_leaves_query = "SELECT * FROM `leaves` WHERE `status`='N/A' ORDER BY `start_date`";
         $select_leaves = mysqli_query($conn, $select_leaves_query);
         while($data = mysqli_fetch_assoc($select_leaves)) {
+            $emp_id = $data['e_id'];
+            // echo $emp_id;
+            $employee_data_query = "SELECT `firstname`, `lastname`, `department` FROM `employees` WHERE `id` = $emp_id";
+            $employee_data = mysqli_query($conn, $employee_data_query);
+            $data2 = mysqli_fetch_assoc($employee_data);
             ?>
             <tr>
-                <td>Employee Name</td>
-                <td>Employee Department</td>
+                <td><?php echo $data2['firstname']. " " .$data2['lastname'] ?></td>
+                <td><?php echo $data2['department']?></td>
                 <td><?php echo $data['leave_type']?></td>
                 <td><?php echo $data['leave_num']?></td>
                 <td><?php echo $data['start_date']?></td>
                 <td>
-                    <a href=""><button>Approve</button></a>
-                    <a href=""><button>Decline</button></a>
+                    <a href="confirm-leave.php?leave=<?php echo $data['id']?>"><button>Approve</button></a>
+                    <a href="deny-leave.php?leave=<?php echo $data['id']?>"><button>Decline</button></a>
                 </td>
             </tr>
             <?php
