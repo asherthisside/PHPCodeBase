@@ -28,7 +28,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="update-details.php"><i class="fa-solid fa-file-pen"></i> <br> Update Info</a>
+                    <a href="update-details.php?id=<?php echo $data['id']?>"><i class="fa-solid fa-file-pen"></i> <br> Update Info</a>
                 </li>
                 <li>
                     <a href="apply-leave.php?name=<?php echo $firstname?>">

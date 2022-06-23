@@ -35,7 +35,7 @@ $data = mysqli_fetch_assoc($select_data)
         <div class="department"><span>Deptt: </span><?php echo $data['department']?></div>
         <div class="qualification"><span>Qualification: </span><?php echo $data['qualification']?></div>
 
-        <h2>Contact Inforrmation</h2>
+        <h2>Contact Information</h2>
 
         <div class="phone"><span>Phone: </span><?php echo $data['phone']?></div>
         <div class="email"><span>Email: </span><?php echo $data['email']?></div>
