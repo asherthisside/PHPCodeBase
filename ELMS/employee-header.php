@@ -18,7 +18,7 @@
         <div class="emp_name">Hello,<span style="font-style: italic;">
                 <?php
                 session_start();
-                echo $_SESSION['name'];
+                echo "<a href='dashboard.php' style='text-decoration:none; color:white'>".$_SESSION['name']."</a>";
                 $firstname = substr($_SESSION['name'], 0, strpos($_SESSION['name'], " "));
                 // echo $firtname;
                 ?>

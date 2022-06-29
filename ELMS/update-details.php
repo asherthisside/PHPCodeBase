@@ -13,9 +13,8 @@
             align-items: center;
         }
 
-        .container form div {
-            margin: 10px;
-            padding: 10px;
+        .container form div > input {
+            margin: 1em auto;
         }
 
     </style>
@@ -32,15 +31,13 @@
     ?>
     <div class="container">
     <h1>Enter your details</h1>
-    <form action="update-details.php?id=<?php echo $data['id']?>" method="post" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Please fill the Information here</legend>
+    <form action="update-details.php?id=<?php echo $data['id']?>" method="post" enctype="multipart/form-data"> 
         <div>
-            <label for="">Employee ID: </label>
-            <input type="text" name="form_emp_id" id="" value="<?php echo $data['emp_id']?>" readonly>
+            <label for=""><strong>Employee ID:</strong></label>
+            <input class="form-control" type="text" name="form_emp_id" id="" value="<?php echo $data['emp_id']?>" readonly>
 
-            <label for="">Department: </label>
-            <select name="form_department" id="">
+            <label for=""><strong>Department:</strong></label>
+            <select name="form_department" id="" class="form-control">
                 <option value="IT">IT</option>
                 <option value="Marketing">Marketing</option>
                 <option value="Sales">Sales</option>
@@ -51,31 +48,28 @@
                 <option value="Other">Other</option>
             </select>
 
-            <label for="">Designation</label>
-            <input type="text" name="form_designation" id="" value="<?php echo $data['designation']?>">
+            <label for=""><strong>Designation:</strong></label>
+            <input class="form-control" type="text" name="form_designation" id="" value="<?php echo $data['designation']?>">
         <div>
-            <label for="">Qualification: </label>
-            <input type="text" name="form_qualification" id="" value="<?php echo $data['qualification']?>">
+            <label for=""><strong>Qualification:</strong></label>
+            <input class="form-control" type="text" name="form_qualification" id="" value="<?php echo $data['qualification']?>">
 
-            <label for="">Phone Number: </label>
-            <input type="number" name="form_phone" id="" value="<?php echo $data['phone']?>">
+            <label for=""><strong>Phone Number:</strong></label>
+            <input class="form-control" type="number" name="form_phone" id="" value="<?php echo $data['phone']?>">
 
-            <label for="">Email: </label>
-            <input type="text" name="form_email" id="" value="<?php echo $data['email']?>">
+            <label for=""><strong>Email:</strong></label>
+            <input class="form-control" type="text" name="form_email" id="" value="<?php echo $data['email']?>">
         </div>
         
         <div>
-            <label for="">Address: </label>
-            <textarea name="form_address" id="" cols="50" rows="10"><?php echo $data['address']?>"</textarea>
+            <label for=""><strong>Address:</strong></label>
+            <textarea class="form-control" name="form_address" id="" cols="50" rows="10"><?php echo $data['address']?></textarea>
 
-            <label for="">Password</label>
-            <input type="text" name="form_password" id="" value="<?php echo $data['password']?>">
+            <label for=""><strong>Password:</strong></label>
+            <input class="form-control" type="text" name="form_password" id="" value="<?php echo $data['password']?>">
         </div>
-
-        </fieldset>
-        
         <div>
-            <input type="submit" value="Update" name="sub">
+            <input class="form-control btn btn-success" type="submit" value="Update" name="sub">
         </div>
     </form>
     </div>

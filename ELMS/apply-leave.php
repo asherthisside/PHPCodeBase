@@ -20,14 +20,14 @@
     ?>
 
     <div class="container">
-        <form action="apply-leave.php?name=<?php echo $username?>" method="post">
+        <form action="apply-leave.php?name=<?php echo $username?>" method="post" class="form-group">
             <div>
                 <label for="">No. of leaves: </label> <br>
-                <input type="number" name="leave_num" id="">
+                <input type="number" name="leave_num" id="" class="form-control ">
             </div>
-            <div>
+            <div class="dropdown">
                 <label for="">Type of leave: </label> <br>
-                <select name="leave_type" id="">
+                <select name="leave_type" id="" class="btn dropdown-toggle">
                     <option value="Casual Leave">Casual Leave</option>
                     <option value="Sick Leave">Sick Leave</option>
                     <option value="Loss of pay">Loss of pay</option>
@@ -35,12 +35,12 @@
                     <option value="Others">Others</option>
                 </select>
             </div>
-            <div>
+            <div class="mb-4">
                 <label for="">Leave Date: </label> <br>
-                <input type="date" name="leave_date" id="">
+                <input type="date" name="leave_date" id="" class="form-control ">
             </div> 
 
-            <input type="submit" value="Apply" name="sub">
+            <input type="submit" value="Apply" name="sub" class="form-control btn btn-success">
         </form>
     </div>
 </body>

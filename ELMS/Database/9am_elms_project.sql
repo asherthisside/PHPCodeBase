@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2022 at 06:21 AM
+-- Generation Time: Jun 23, 2022 at 08:33 AM
 -- Server version: 5.7.37-log
 -- PHP Version: 8.0.10
 
@@ -67,8 +67,33 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `firstname`, `lastname`, `emp_id`, `department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`, `image`) VALUES
-(1, 'Haaris', 'Saifi', 'DBEF - 010', 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\r\nMohalla Ghulam Sabir Near Lal Masjid', '123', 'Untitled-2 (1).png'),
-(2, 'Ashish', 'Gautam', '234453', 'HR', 'Sr. HR Manager', 'MBA', 7088240011, 'aanaya@gmail.com', 'Rudrapur, Nainital, U.K.', '123', 'PHP.png');
+(1, 'Haaris', 'Saifi', 'DBEF - 010', 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\r\nMohalla Ghulam Sabir Near Lal Masjid\"', '12345', ''),
+(2, 'Akanksha', 'Bhatt', '234453', 'IT', 'Sr. HR Manager', 'MBA', 7088240011, 'aanaya@gmail.com', 'Rudrapur, Nainital, U.K.', '123', 'PHP.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `info-updates`
+--
+
+CREATE TABLE `info-updates` (
+  `id` int(11) NOT NULL,
+  `department` varchar(12) NOT NULL,
+  `designation` varchar(35) NOT NULL,
+  `qualification` varchar(25) NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `address` text NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `status` varchar(8) NOT NULL DEFAULT 'Pending'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `info-updates`
+--
+
+INSERT INTO `info-updates` (`id`, `department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`, `status`) VALUES
+(1, 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\r\nMohalla Ghulam Sabir Near Lal Masjid\"\"', '123', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -82,7 +107,7 @@ CREATE TABLE `leaves` (
   `leave_num` int(11) NOT NULL,
   `leave_type` varchar(20) NOT NULL,
   `start_date` date NOT NULL,
-  `status` varchar(10) DEFAULT NULL
+  `status` varchar(10) DEFAULT 'N/A'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -90,8 +115,9 @@ CREATE TABLE `leaves` (
 --
 
 INSERT INTO `leaves` (`id`, `e_id`, `leave_num`, `leave_type`, `start_date`, `status`) VALUES
-(1, 1, 2, 'Casual Leave', '2022-06-25', NULL),
-(2, 2, 4, 'Sick Leave', '2022-06-28', NULL);
+(1, 1, 2, 'Casual Leave', '2022-06-25', 'Declined'),
+(2, 2, 4, 'Sick Leave', '2022-06-28', 'Declined'),
+(3, 1, 1, 'Sick Leave', '2022-06-23', 'Approved');
 
 --
 -- Indexes for dumped tables
@@ -107,6 +133,12 @@ ALTER TABLE `admin`
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `info-updates`
+--
+ALTER TABLE `info-updates`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -133,10 +165,16 @@ ALTER TABLE `employees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `info-updates`
+--
+ALTER TABLE `info-updates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `leaves`
 --
 ALTER TABLE `leaves`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

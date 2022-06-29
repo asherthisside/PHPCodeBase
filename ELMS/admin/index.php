@@ -15,19 +15,19 @@ include '../connection.php';
 
 <body>
     <h1>Please Log in</h1>
-    <form action="index.php" method="post">
+    <form action="index.php" method="post" class="form-group">
         <div>
-            <label for="">Enter Email: </label> <br>
-            <input type="email" name="form_email" id="">
+            <label for=""><strong>Enter Email:</strong>  </label> <br>
+            <input type="email" name="form_email" id="" class="form-control">
         </div>
 
         <div>
-            <label for="">Enter Password</label> <br>
-            <input type="password" name="form_pass" id="">
+            <label for=""><strong>Enter Password: </strong></label> <br>
+            <input type="password" name="form_pass" id="" class="form-control">
         </div>
 
-        <div>
-            <input type="submit" value="Log In" name="sub">    
+        <div class="mt-4">
+            <input type="submit" value="Log In" name="sub" class="form-control">    
         </div>
     </form>
 </body>

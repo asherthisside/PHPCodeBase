@@ -1,10 +1,6 @@
-<?php
-session_start();
-echo "Hello, ".$_SESSION['name'].".";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,30 +12,69 @@ echo "Hello, ".$_SESSION['name'].".";
             display: flex;
         }
 
-        .container .btn {
+        .container .button {
             flex: 1;
             text-align: center;
-            border: 1px solid black;
-            padding: 10px; 
+            /* border: 1px solid black; */
+            padding: 10px;
             margin: auto 10px;
         }
     </style>
 
 </head>
+
 <body>
+    <?php 
+    include 'admin-header.php'; 
+    include '../connection.php';
+    $employees_query = "SELECT * FROM `employees`";
+    $employees = mysqli_query($conn, $employees_query);
+    $employees_num = mysqli_num_rows($employees); 
+
+    $leave_requests_query = "SELECT * FROM `leaves` WHERE `status` = 'N/A'";
+    $leave_requests = mysqli_query($conn, $leave_requests_query);
+    $leave_requests_num = mysqli_num_rows($leave_requests);
+    
+    $update_requests_query = "SELECT * FROM `info-updates`";
+    $update_requests = mysqli_query($conn, $update_requests_query);
+    $update_requests_num = mysqli_num_rows($update_requests);
+    
+    $leave_history_query = "SELECT * FROM `leaves`  WHERE `status` != 'N/A'";
+    $leave_history = mysqli_query($conn, $leave_history_query);
+    $leave_history_num = mysqli_num_rows($leave_history);
+    ?>
     <div class="container">
-        <div class="btn">
-            <a href="employee-details.php"><button>View Employees</button></a>
+        <div class="button">
+            <a href="employee-details.php">
+                <button class="btn btn-primary">View Employee
+                <span class="badge badge-dark bg-dark"><?php echo $employees_num ?></span>
+                </button>
+            </a>
         </div>
-        <div class="btn">
-            <a href="leave-requests.php"><button>Leave Requests</button></a>
+        <div class="button">
+            <a href="leave-requests.php">
+                <button class="btn btn-primary">Leave Request
+                <span class="badge badge-dark bg-dark"><?php echo $leave_requests_num ?></span>
+                </button>
+            </a>
+            
         </div>
-        <div class="btn">
-            <a href="update-requests.php"><button>Update Requests</button></a>
+        <div class="button">
+            <a href="update-requests.php">
+                <button class="btn btn-primary">Update Requests
+                <span class="badge badge-dark bg-dark"><?php echo $update_requests_num ?></span>
+            </button>
+                </a>
+                
         </div>
-        <div class="btn">
-            <a href="leaves.php"><button>Leaves History</button></a>
+        <div class="button">
+            <a href="leaves.php">
+                <button class="btn btn-primary">Leaves History
+                    <span class="badge badge-dark bg-dark"><?php echo $leave_history_num ?></span>
+                </button>
+                </a>
         </div>
     </div>
 </body>
+
 </html>

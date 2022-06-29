@@ -41,8 +41,9 @@ $data = mysqli_fetch_assoc($select_data)
         <div class="email"><span>Email: </span><?php echo $data['email']?></div>
         <div class="address"><span>Address: </span><?php echo $data['address']?></div>
         <div class="leave-table">
-            <table>
-                <tr>
+            <h2>Leave Record</h2>
+            <table class="table">
+                <tr class="table-dark">
                     <th>Leave Type</th>
                     <th>No. of Leaves</th>
                     <th>Starting Date</th>

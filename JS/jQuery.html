@@ -6,6 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery CC</title>
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: #ccc;
+        }
+
+        .para {
+            background-color: dodgerblue;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,6 +23,8 @@
     <hr>
     <button>Click here</button>
     <input type="text" id="i1">
+    <button id="btn-2">Normal Mode</button>
+    <button id="btn-3">Dark Mode</button>
     <p class="para pgraph" id="p1">1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dolorem
         minima libero est quo odio unde ad, inventore, non aperiam ipsum quaerat quod ea. Animi deleniti quam assumenda
         reprehenderit voluptates, maxime rem debitis labore odit. Voluptas qui at, reprehenderit commodi mollitia nam
@@ -45,6 +57,17 @@
         necessitatibus laborum nihil cumque ipsam voluptatibus, sint quos est corporis excepturi debitis eius esse
         eaque. Sunt doloremque dignissimos eligendi nihil laudantium accusantium voluptates, quod quae in delectus
         praesentium numquam? Id?</p>
+
+        <h2 class="head" id="h2">This is a list</h2>
+
+        <ul id="list-1">
+            <li class="list-item" id="item1">abc</li>
+            <li class="list-item" id="item2">def</li>
+            <li class="list-item" id="item3">ghi</li>
+            <li class="list-item" id="item4">jkl</li>
+            <li class="list-item" id="item5">mno</li>
+        </ul>
+
     <script src="../jquery-3.6.0.js"></script>
     <script>
         // console.log($)
@@ -75,9 +98,26 @@
                 // $("#p4").text("<b>The value has now been changed with jQuery</b>")
                 // console.log($("#i1").val())
                 // $("#i1").val("Value filled")
-                $("#p1").append("This text is now appended")
+                // $("#p1").append("This text is now appended")
+                // $("#p1").after("This text is now appended")
+                // $("#list-1").remove()
+                // $("p").addClass("dark-mode")
             })
         )
+
+        // $("#btn-2").click(function () {
+        //     $("p").removeClass("dark-mode")
+        // })
+        
+        // $("#btn-3").click(function () {
+        //     $("#p1").toggleClass("dark-mode")
+        // })
+
+        // console.log($("#p2").css("backgroundColor"))
+        $("#p2").css({"backgroundColor" : "crimson", "color" : "white"})
+        $("btn").mouseover(function () {
+            $("btn").addClass()
+        })
     </script>
 </body>
 
