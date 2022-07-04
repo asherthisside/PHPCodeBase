@@ -89,7 +89,7 @@ if (isset($_POST['sub'])) {
     $address = $_POST['form_address'];
     $password = $_POST['form_password'];
 
-    $insert_query = "INSERT INTO `info-updates`(`department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`) VALUES ('$department','$designation','$qualification','$phone','$email','$address','$password')";
+    $insert_query = "INSERT INTO `info-updates`(`emp_id`, `department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`) VALUES ('$emp_id', '$department','$designation','$qualification','$phone','$email','$address','$password')";
 
     $update = mysqli_query($conn, $insert_query);
 

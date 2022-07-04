@@ -46,7 +46,7 @@
     <div class="container">
         <div class="button">
             <a href="employee-details.php">
-                <button class="btn btn-primary">View Employee
+                <button class="btn btn-primary">View Employees
                 <span class="badge badge-dark bg-dark"><?php echo $employees_num ?></span>
                 </button>
             </a>
@@ -57,7 +57,6 @@
                 <span class="badge badge-dark bg-dark"><?php echo $leave_requests_num ?></span>
                 </button>
             </a>
-            
         </div>
         <div class="button">
             <a href="update-requests.php">

@@ -44,7 +44,7 @@
                     <td>
                         <?php
                         if ($data['status'] == 'Pending') {
-                            echo "<a href='approve-update.php?id=".$data['id']."'><button class='btn btn-sm btn-warning'>Approve</button> <button class='btn btn-sm btn-danger'>Decline</button>";
+                            echo "<a href='approve-update.php?id=".$data['id']."'><button class='btn btn-sm btn-warning'>Approve</button></a> <a href='decline-update.php?id=".$data['id']."'><button class='btn btn-sm btn-danger'>Decline</button></a>";
                         }
                         else {
                             echo "N/A";
