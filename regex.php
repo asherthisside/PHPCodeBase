@@ -68,8 +68,8 @@
 // \S - Allows no whitespace character
 // \b - Represent the word boundary
 
-$str = "His name isharry. Hcrry is a good boy";
-if(preg_match_all("/harry\b/i", $str, $abc)) {
+$str = "His name is h3rry. Hcrry is a good boy";
+if(preg_match_all("/h\wrry/", $str, $abc)) {
     echo "Match Found";
 }
 else {

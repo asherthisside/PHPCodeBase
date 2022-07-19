@@ -1,0 +1,4 @@
+This is a file.
+It has 2 lines.
+There is the 3rd line as well.
+No, here is one more line, the 4th line.This text is written by the using the fwrite function of PHP

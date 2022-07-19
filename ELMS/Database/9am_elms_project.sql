@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2022 at 08:33 AM
+-- Generation Time: Jul 14, 2022 at 06:59 AM
 -- Server version: 5.7.37-log
 -- PHP Version: 8.0.10
 
@@ -54,12 +54,12 @@ CREATE TABLE `employees` (
   `emp_id` varchar(10) NOT NULL,
   `department` varchar(20) DEFAULT NULL,
   `designation` varchar(30) DEFAULT NULL,
-  `qualification` varchar(20) DEFAULT NULL,
+  `qualification` varchar(25) DEFAULT NULL,
   `phone` bigint(20) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
   `address` text,
   `password` varchar(25) DEFAULT NULL,
-  `image` text NOT NULL
+  `image` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -67,8 +67,9 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `firstname`, `lastname`, `emp_id`, `department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`, `image`) VALUES
-(1, 'Haaris', 'Saifi', 'DBEF - 010', 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\r\nMohalla Ghulam Sabir Near Lal Masjid\"', '12345', ''),
-(2, 'Akanksha', 'Bhatt', '234453', 'IT', 'Sr. HR Manager', 'MBA', 7088240011, 'aanaya@gmail.com', 'Rudrapur, Nainital, U.K.', '123', 'PHP.png');
+(1, 'Haaris', 'Saifi', 'DBEF - 010', 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\nMohalla Ghulam Sabir Near Lal Masjid', '123', ''),
+(2, 'Akanksha', 'Bhatt', '234453', 'HR', 'General HR Manager', 'MBA Ph.D.', 1234567889, 'aanaya@gmail.com', 'Rudrapur, Nainital, U.K.', '123', 'PHP.png'),
+(3, 'Anuj', 'Aabhan', 'DBEF - 011', 'IT', 'Project Manager', 'M.Tech. ', 12304560, 'anuj@aabhan.com', 'Noida, Karnataka', '123123', '18a-healing-brush-royal-anwar-unsplash.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,13 +79,14 @@ INSERT INTO `employees` (`id`, `firstname`, `lastname`, `emp_id`, `department`, 
 
 CREATE TABLE `info-updates` (
   `id` int(11) NOT NULL,
-  `department` varchar(12) NOT NULL,
+  `emp_id` varchar(20) NOT NULL,
+  `department` varchar(20) NOT NULL,
   `designation` varchar(35) NOT NULL,
   `qualification` varchar(25) NOT NULL,
   `phone` bigint(20) NOT NULL,
   `email` varchar(60) NOT NULL,
   `address` text NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(25) NOT NULL,
   `status` varchar(8) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -92,8 +94,10 @@ CREATE TABLE `info-updates` (
 -- Dumping data for table `info-updates`
 --
 
-INSERT INTO `info-updates` (`id`, `department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`, `status`) VALUES
-(1, 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\r\nMohalla Ghulam Sabir Near Lal Masjid\"\"', '123', 'Pending');
+INSERT INTO `info-updates` (`id`, `emp_id`, `department`, `designation`, `qualification`, `phone`, `email`, `address`, `password`, `status`) VALUES
+(1, 'DBEF - 010', 'IT', 'Sr. Technical Instructor', 'M.Phil ', 9634166040, 'haaris@trainingbasket.in', 'House no. 65\nMohalla Ghulam Sabir Near Lal Masjid', '123', 'Approved'),
+(2, '234453', 'HR', 'General HR Manager', 'MBA Ph.D.', 1234567889, 'aanaya@gmail.com', 'Rudrapur, Nainital, U.K.', '123', 'Approved'),
+(3, '234453', 'Other', 'Pantry boy', 'BA', 1234567889, 'abcd@mygmail.com', 'Dehradun', '12345', 'Declined');
 
 -- --------------------------------------------------------
 
@@ -162,13 +166,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `info-updates`
 --
 ALTER TABLE `info-updates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `leaves`
